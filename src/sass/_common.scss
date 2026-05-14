@@ -21,3 +21,28 @@ h5,
 h6 {
   font-family: $font-heading;
 }
+
+.alpine-demo {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.alpine-demo button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+}
+
+.alpine-demo button:hover {
+  border-color: #94a3b8;
+}
+
+.alpine-demo__panel {
+  margin: 0.75rem 0 0;
+}

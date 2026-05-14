@@ -6,9 +6,10 @@
 
 - **HTML** — Pug (`src/pages/*.pug`), общий layout в `src/templates/`.
 - **Стили** — Sass (`@use` / `@forward`), общие стили в `src/sass/`.
-- **JS** — ESM, точка входа `src/js/app.js` (иконки, стили, свой код).
+- **JS** — ESM, точка входа `src/js/app.js` (иконки, стили, **Alpine.js**, свой код).
 - **Иконки** — `src/icons/*.svg` → спрайт через `vite-plugin-svg-icons` (цвет через CSS, `fill: currentColor`).
 - **Картинки и шрифты** — `src/img/`, `src/fonts/` копируются в `dist/img`, `dist/fonts` при сборке.
+- **Alpine.js** — лёгкий реактивный слой для MPA (`x-data`, `x-show`, `x-on:click` и т.д.). В Pug удобнее писать `x-on:click`, а не `@click` (символ `@` зарезервирован в Pug).
 
 ## Скрипты
 

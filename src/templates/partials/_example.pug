@@ -1,1 +1,4 @@
 p Пример подключения partial.
+.alpine-demo(x-data="{ open: false }")
+  button(type="button" x-on:click="open = !open") Показать / скрыть
+  p.alpine-demo__panel(x-show="open") Пример Alpine.js: состояние в разметке, без отдельного скрипта на странице.
