@@ -4,7 +4,18 @@ block vars
   - var title = 'Главная'
 
 block content
-  <div>
-    <h1>Главная</h1>
-    <p>Шаблон сайта</p>
-  </div>
+  div
+    h1 Главная
+    p Шаблон сайта
+    include ../templates/partials/_example
+
+    section.demo-section
+      h2 Пример компонента
+      include ../templates/components/_dropdown
+      -
+        const menuItems = [
+          { label: 'Профиль', href: '#' },
+          { label: 'Настройки', href: '#' },
+          { label: 'Выход', href: '#' },
+        ]
+      +dropdown('Меню', menuItems)

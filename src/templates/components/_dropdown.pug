@@ -1,0 +1,13 @@
+mixin dropdown(label, items)
+  .dropdown.js-dropdown
+    button.dropdown__toggle.js-dropdown-toggle(
+      type="button"
+      aria-expanded="false"
+      aria-haspopup="true"
+    )
+      span.dropdown__label= label
+      span.dropdown__caret(aria-hidden="true")
+    ul.dropdown__menu.js-dropdown-menu(role="menu")
+      each item in items
+        li.dropdown__item(role="none")
+          a.dropdown__link(href=item.href || '#' role="menuitem")= item.label

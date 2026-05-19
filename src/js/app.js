@@ -1,5 +1,8 @@
+import $ from 'jquery';
 import 'virtual:svg-icons-register';
 import '@/sass/app.sass';
-import { sayHello } from '@/js/lib/sayHello.js';
+import { initUi } from '@/js/ui.js';
 
-sayHello();
+window.$ = window.jQuery = $;
+
+initUi();

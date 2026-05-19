@@ -1,11 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-/**
- * После сборки: dist/<page>/index.html → dist/<page>.html (как в старом Gulp build).
- * Пути ../js/, ../css/, ../fonts/, ../img/, ../assets/ → ./… (файл в корне dist).
- * В dev: запрос /about.html проксируется на /about/index.html для плагина Pug.
- */
 export function flatPagesHtml() {
   let outDirAbs = '';
 
