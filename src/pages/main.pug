@@ -4,21 +4,5 @@ block vars
   - var title = 'Главная'
 
 block content
-  -
-    const sliderSlides = [
-      { href: './img/slider/1.jpg', src: './img/slider/1.jpg', alt: 'Слайд 1' },
-      { href: './img/slider/2.jpg', src: './img/slider/2.jpg', alt: 'Слайд 2' },
-      { href: './img/slider/3.jpg', src: './img/slider/3.jpg', alt: 'Слайд 3' },
-      { href: './img/slider/1.jpg', src: './img/slider/1.jpg', alt: 'Слайд 4' },
-    ]
-  +slider({
-    title: 'Галерея',
-    subtitle: 'Пример слайдера',
-    sectionClass: 'section--padd-t',
-    slides: sliderSlides,
-    gallery: 'main-gallery',
-    perView: 3,
-    gap: 15,
-    breakpoints: { 1024: { perView: 2.2, gap: 16 }, 768: { perView: 1.15, gap: 12 } },
-  })
+  +slider()
   +faq()

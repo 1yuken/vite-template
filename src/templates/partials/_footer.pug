@@ -1,34 +1,56 @@
 //- BEGIN footer
 footer.footer
-  .container
-    .footer__wrap
-      .footer__contacts-wrap
-        a.footer__logo(href='/') НАЗВАНИЕ
-        .footer__contacts
-          a.footer__contact(href='tel:+79786868302')
-            +icon('phone')
-            div
-              span Для связи с нами
-              strong +7 000 000-00-00
-          a.footer__contact(href='#' target='_blank' rel='noopener noreferrer')
-            +icon('geo')
-            div
-              span Симферополь
-              strong Адрес
-          .footer__socials
-            a.footer__social(href='/' aria-label='ВКонтакте')
-              +icon('vk')
-            a.footer__social(href='/' aria-label='Telegram')
-              +icon('tg')
-      nav.footer__nav(aria-label='Навигация в подвале')
-        ul
-          li: a(href='/') Страница
-          li: a(href='/') Страница
-          li: a(href='/') Страница
-          li: a(href='/') Страница
-          li: a(href='/') Страница
-    .footer__bottom
-      strong НАЗВАНИЕ 2026
-      a(href='./policy.html') Политика обработки персональных данных
-      a(href='/') Соглашение политики конфиденциальности
+  <div class="container">
+    <div class="footer__wrap">
+      <div class="footer__contacts-wrap">
+        <a class="footer__logo" href="/">НАЗВАНИЕ</a>
+        <div class="footer__contacts">
+          <a class="footer__contact" href="tel:+79786868302">
+            <svg class="icon icon-phone" aria-hidden="true" focusable="false">
+              <use href="#icon-phone" xlink:href="#icon-phone"></use>
+            </svg>
+            <div>
+              <span>Для связи с нами</span>
+              <strong>+7 000 000-00-00</strong>
+            </div>
+          </a>
+          <a class="footer__contact" href="#" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-geo" aria-hidden="true" focusable="false">
+              <use href="#icon-geo" xlink:href="#icon-geo"></use>
+            </svg>
+            <div>
+              <span>Симферополь</span>
+              <strong>Адрес</strong>
+            </div>
+          </a>
+          <div class="footer__socials">
+            <a class="footer__social" href="/" aria-label="ВКонтакте">
+              <svg class="icon icon-vk" aria-hidden="true" focusable="false">
+                <use href="#icon-vk" xlink:href="#icon-vk"></use>
+              </svg>
+            </a>
+            <a class="footer__social" href="/" aria-label="Telegram">
+              <svg class="icon icon-tg" aria-hidden="true" focusable="false">
+                <use href="#icon-tg" xlink:href="#icon-tg"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="/">Страница</a></li>
+          <li><a href="/">Страница</a></li>
+          <li><a href="/">Страница</a></li>
+          <li><a href="/">Страница</a></li>
+          <li><a href="/">Страница</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <strong>НАЗВАНИЕ 2026</strong>
+      <a href="./policy.html">Политика обработки персональных данных</a>
+      <a href="/">Соглашение политики конфиденциальности</a>
+    </div>
+  </div>
 //- END footer

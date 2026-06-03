@@ -1,0 +1,222 @@
+@use 'helpers' as *;
+
+.feedback-form {
+    &__inner {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px 10px;
+        border-radius: 30px;
+        background-color: #f1ede7;
+
+        @include rmin($desktop) {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 40px;
+            border-radius: 35px;
+        }
+
+        &--success {
+            justify-content: center;
+
+            .feedback-form__body {
+                display: none;
+            }
+
+            .feedback-form__success {
+                display: flex;
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+
+        @include rmin($desktop) {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 30px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+
+        @include rmin($desktop) {
+            flex: 1;
+            text-align: left;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.25;
+        color: var(--black);
+
+        @include rmin($desktop) {
+            max-width: 400px;
+            font-size: 30px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.35;
+        text-align: center;
+        color: var(--secondary);
+
+        @include rmin($desktop) {
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+
+    &__form-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        @include rmin($desktop) {
+            flex: 1;
+            max-width: 480px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid var(--secondary-light);
+        border-radius: 15px;
+        background-color: var(--white);
+        font-family: $font-main;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--black);
+
+        &::placeholder {
+            color: var(--secondary);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        @include rmin($desktop) {
+            font-size: 18px;
+        }
+
+        &--textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.35;
+        color: var(--black);
+        cursor: pointer;
+
+        input {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    }
+
+    &__submit {
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+
+        @include rmin($desktop) {
+            margin-top: 15px;
+        }
+    }
+
+    &__success {
+        position: relative;
+        z-index: 1;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        text-align: center;
+
+        @include rmin($desktop) {
+            gap: 24px;
+        }
+    }
+
+    &__success-avatar {
+        display: grid;
+        place-items: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: var(--secondary-light);
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--primary);
+
+        &::before {
+            content: '✓';
+            line-height: 1;
+        }
+
+        @include rmin($desktop) {
+            width: 200px;
+            height: 200px;
+            font-size: 64px;
+        }
+    }
+
+    &__success-title {
+        margin: 0;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.25;
+        color: var(--black);
+    }
+
+    &__success-text {
+        max-width: 480px;
+        margin: 0;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.4;
+        color: var(--black);
+    }
+}

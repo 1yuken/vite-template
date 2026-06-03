@@ -1,48 +1,47 @@
-mixin slider(config = {})
-  - const title = config.title || ''
-  - const subtitle = config.subtitle || ''
-  - const titleMods = config.titleMods || ''
-  - const subtitleMods = config.subtitleMods || ''
-  - const headMods = config.headMods || ''
-  - const sectionClass = config.sectionClass || ''
-  - const slides = config.slides || []
-  - const gallery = config.gallery || ''
-  - const perView = config.perView != null ? config.perView : 3
-  - const gap = config.gap != null ? config.gap : 15
-  - const breakpointsJson = config.breakpoints ? JSON.stringify(config.breakpoints) : ''
-
-  section.section.ui-slider(class=sectionClass)
-    .container
-      if title
-        +sectionHead(title, subtitle, titleMods, subtitleMods, headMods)
-      .ui-slider__root.glide.js-ui-slider(
-        data-per-view=perView
-        data-gap=gap
-        data-breakpoints=breakpointsJson || undefined
-      )
-        .glide__track.ui-slider__track(data-glide-el='track')
-          ul.ui-slider__list.glide__slides
-            each slide in slides
-              li.ui-slider__item.glide__slide
-                if slide.href
-                  a.ui-slider__link(
-                    href=slide.href
-                    data-gallery=slide.galleryGroup || gallery || undefined
-                  )
-                    img(src=slide.src alt=slide.alt || '')
-                else
-                  .ui-slider__media
-                    img(src=slide.src alt=slide.alt || '')
-        .ui-slider__arrows(data-glide-el='controls')
-          button.ui-slider__arrow.ui-slider__arrow--prev(
-            type='button'
-            data-glide-dir='<'
-            aria-label='Предыдущий слайд'
-          )
-            +icon('chevron-right')
-          button.ui-slider__arrow.ui-slider__arrow--next(
-            type='button'
-            data-glide-dir='>'
-            aria-label='Следующий слайд'
-          )
-            +icon('chevron-right')
+mixin slider()
+  <section class="ui-slider">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="title">Галерея</h2>
+        <p class="section-head__subtitle">Пример слайдера</p>
+      </div>
+      <div class="ui-slider__root glide js-ui-slider">
+        <div class="glide__track ui-slider__track" data-glide-el="track">
+          <ul class="ui-slider__list glide__slides">
+            <li class="ui-slider__item glide__slide">
+              <a class="ui-slider__link" href="./img/slider/1.jpg" data-gallery="main-gallery">
+                <img src="./img/slider/1.jpg" alt="Слайд 1" />
+              </a>
+            </li>
+            <li class="ui-slider__item glide__slide">
+              <a class="ui-slider__link" href="./img/slider/2.jpg" data-gallery="main-gallery">
+                <img src="./img/slider/2.jpg" alt="Слайд 2" />
+              </a>
+            </li>
+            <li class="ui-slider__item glide__slide">
+              <a class="ui-slider__link" href="./img/slider/3.jpg" data-gallery="main-gallery">
+                <img src="./img/slider/3.jpg" alt="Слайд 3" />
+              </a>
+            </li>
+            <li class="ui-slider__item glide__slide">
+              <a class="ui-slider__link" href="./img/slider/1.jpg" data-gallery="main-gallery">
+                <img src="./img/slider/1.jpg" alt="Слайд 4" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="ui-slider__arrows" data-glide-el="controls">
+          <button class="ui-slider__arrow ui-slider__arrow--prev" type="button" data-glide-dir="&lt;" aria-label="Предыдущий слайд">
+            <svg class="icon icon-chevron-right" aria-hidden="true" focusable="false">
+              <use href="#icon-chevron-right" xlink:href="#icon-chevron-right"></use>
+            </svg>
+          </button>
+          <button class="ui-slider__arrow ui-slider__arrow--next" type="button" data-glide-dir="&gt;" aria-label="Следующий слайд">
+            <svg class="icon icon-chevron-right" aria-hidden="true" focusable="false">
+              <use href="#icon-chevron-right" xlink:href="#icon-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>

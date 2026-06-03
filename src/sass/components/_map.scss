@@ -1,0 +1,39 @@
+@use 'helpers' as *;
+
+.map {
+    &__head {
+        padding: 0 10px;
+
+        @include rmin($desktop) {
+            padding: 0;
+        }
+    }
+
+    &__frame {
+        position: relative;
+        margin-top: 35px;
+        height: 410px;
+        overflow: hidden;
+        border: 3.59px solid var(--secondary);
+        border-radius: 35px;
+
+        @include rmin($desktop) {
+            height: 650px;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+    }
+
+    &__canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: transparent;
+        cursor: pointer;
+    }
+}

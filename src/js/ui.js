@@ -4,6 +4,8 @@ import { initFaq } from '@/js/components/faq.js';
 import { initSlider } from '@/js/components/slider.js';
 import { initLightbox } from '@/js/components/lightbox.js';
 import { initCookies } from '@/js/components/cookies.js';
+import { initMap } from '@/js/components/map.js';
+import { initFeedbackForm } from '@/js/components/feedback-form.js';
 
 /** Общие UI-скрипты: подключаются на всех страницах с layout */
 export function initUi() {
@@ -18,6 +20,8 @@ export function initUi() {
   initSlider();
   initLightbox();
   initCookies();
+  initMap();
+  initFeedbackForm();
 }
 
 function initHeaderMenu() {

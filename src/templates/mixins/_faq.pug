@@ -1,40 +1,76 @@
 mixin faq()
-  section#faq-section.faq.section.section--padd
-    .container
-      +sectionHead('Часто задаваемые вопросы', 'Ответы на основные вопросы о формате')
-      .faq__list
-        .faq__item.is-open
-          button.faq__question(type='button' aria-expanded='true')
-            span Вопрос?
-            span.faq__icon(aria-hidden='true')
-              +icon('plus')
-          .faq__answer
-            p Ответ на вопрос.
-        .faq__item
-          button.faq__question(type='button' aria-expanded='false')
-            span Вопрос?
-            span.faq__icon(aria-hidden='true')
-              +icon('plus')
-          .faq__answer
-            p Ответ на вопрос.
-        .faq__item
-          button.faq__question(type='button' aria-expanded='false')
-            span Вопрос?
-            span.faq__icon(aria-hidden='true')
-              +icon('plus')
-          .faq__answer
-            p Ответ на вопрос.
-        .faq__item
-          button.faq__question(type='button' aria-expanded='false')
-            span Вопрос?
-            span.faq__icon(aria-hidden='true')
-              +icon('plus')
-          .faq__answer
-            p Ответ на вопрос.
-        .faq__item
-          button.faq__question(type='button' aria-expanded='false')
-            span Вопрос?
-            span.faq__icon(aria-hidden='true')
-              +icon('plus')
-          .faq__answer
-            p Ответ на вопрос.
+  <section id="faq-section" class="faq section section--padd">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="title">Часто задаваемые вопросы</h2>
+        <p class="section-head__subtitle">Ответы на основные вопросы о формате</p>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item is-open">
+          <button class="faq__question" type="button" aria-expanded="true">
+            <span>Вопрос?</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg class="icon icon-plus" aria-hidden="true" focusable="false">
+                <use href="#icon-plus" xlink:href="#icon-plus"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="faq__answer">
+            <p>Ответ на вопрос.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button" aria-expanded="false">
+            <span>Вопрос?</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg class="icon icon-plus" aria-hidden="true" focusable="false">
+                <use href="#icon-plus" xlink:href="#icon-plus"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="faq__answer">
+            <p>Ответ на вопрос.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button" aria-expanded="false">
+            <span>Вопрос?</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg class="icon icon-plus" aria-hidden="true" focusable="false">
+                <use href="#icon-plus" xlink:href="#icon-plus"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="faq__answer">
+            <p>Ответ на вопрос.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button" aria-expanded="false">
+            <span>Вопрос?</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg class="icon icon-plus" aria-hidden="true" focusable="false">
+                <use href="#icon-plus" xlink:href="#icon-plus"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="faq__answer">
+            <p>Ответ на вопрос.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" type="button" aria-expanded="false">
+            <span>Вопрос?</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg class="icon icon-plus" aria-hidden="true" focusable="false">
+                <use href="#icon-plus" xlink:href="#icon-plus"></use>
+              </svg>
+            </span>
+          </button>
+          <div class="faq__answer">
+            <p>Ответ на вопрос.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

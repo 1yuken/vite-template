@@ -1,11 +1,13 @@
 mixin cookies()
-  .cookies.cookies--hidden
-    .container
-      .cookies__inner
-        .cookies__text
-          p
-            | Мы используем cookies для быстрой и удобной работы сайта. Продолжая пользоваться сайтом, вы принимаете
-            |
-            a(href='./policy.html')  условия обработки персональных данных
-        .cookies__actions
-          button.btn.btn--primary.cookies__btn(type='button' data-cookie-accept) Принимаю
+  <div class="cookies cookies--hidden">
+    <div class="container">
+      <div class="cookies__inner">
+        <div class="cookies__text">
+          <p>Мы используем cookies для быстрой и удобной работы сайта. Продолжая пользоваться сайтом, вы принимаете <a href="./policy.html">условия обработки персональных данных</a></p>
+        </div>
+        <div class="cookies__actions">
+          <button type="button" class="btn btn--primary cookies__btn" data-cookie-accept>Принимаю</button>
+        </div>
+      </div>
+    </div>
+  </div>
