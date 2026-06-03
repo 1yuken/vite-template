@@ -1,0 +1,69 @@
+@use 'helpers' as *;
+
+.ui-slider {
+    &__root {
+        position: relative;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__link,
+    &__media {
+        display: block;
+        overflow: hidden;
+        border-radius: 16px;
+        background: var(--primary-light, #f1f5f9);
+    }
+
+    &__link img,
+    &__media img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    &__arrows {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+
+        @include rmin($desktop) {
+            margin-top: 24px;
+        }
+    }
+
+    &__arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--primary-light, #e2e8f0);
+        color: var(--primary, #1e293b);
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            background: var(--primary, #1e293b);
+            color: #fff;
+        }
+
+        &--prev .icon {
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@use 'helpers' as *;
+
+.cookies {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--white);
+    border-radius: 20px 20px 0 0;
+    box-shadow:
+        0 -15px 50px 0 rgba(0, 0, 0, 0.05),
+        0 -15px 50px 0 rgba(0, 0, 0, 0.1);
+
+    &--hidden {
+        display: none;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+
+        @include rmin($desktop) {
+            max-width: $max-width;
+            margin: 0 auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        p,
+        a {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--black);
+
+            @include rmin($desktop) {
+                font-size: 16px;
+            }
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: flex-start;
+
+        @include rmin($desktop) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__btn {
+        justify-content: center;
+        height: 50px;
+
+        @include rmin($desktop) {
+            width: 500px;
+            height: 60px;
+        }
+    }
+}

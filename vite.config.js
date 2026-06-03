@@ -1,27 +1,22 @@
 import { defineConfig, loadEnv } from 'vite';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import fs from 'node:fs';
-import { parse as parseYaml } from 'yaml';
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import viteImagemin from 'vite-plugin-imagemin';
 import { flatPagesHtml } from './vite/flat-pages-html.js';
+import { createPagesLocals, pagesListReloadPlugin } from './vite/pages-config.js';
+import { dynamicPugPagesDev } from './vite/dynamic-pug-pages-dev.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-function readPageList() {
-  const file = resolve(__dirname, 'src/index.yaml');
-  if (!fs.existsSync(file)) {
-    return { ProjectTitle: 'Pages', PageList: [] };
-  }
-  return parseYaml(fs.readFileSync(file, 'utf8'));
-}
-
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname, '');
-  const pages = readPageList();
+  const { locals: pagesLocals, refresh: refreshPagesLocals } = createPagesLocals(
+    __dirname,
+    env,
+  );
 
   return {
     root: resolve(__dirname, 'src'),
@@ -78,11 +73,10 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       flatPagesHtml(),
+      pagesListReloadPlugin(refreshPagesLocals),
+      dynamicPugPagesDev(() => pagesLocals),
       viteConvertPugInHtml({
-        locals: {
-          pages,
-          siteName: env.VITE_SITE_NAME || pages.ProjectTitle || 'Site',
-        },
+        locals: pagesLocals,
       }),
       createSvgIconsPlugin({
         iconDirs: [resolve(__dirname, 'src/icons')],

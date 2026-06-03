@@ -1,0 +1,34 @@
+//- BEGIN footer
+footer.footer
+  .container
+    .footer__wrap
+      .footer__contacts-wrap
+        a.footer__logo(href='/') НАЗВАНИЕ
+        .footer__contacts
+          a.footer__contact(href='tel:+79786868302')
+            +icon('phone')
+            div
+              span Для связи с нами
+              strong +7 000 000-00-00
+          a.footer__contact(href='#' target='_blank' rel='noopener noreferrer')
+            +icon('geo')
+            div
+              span Симферополь
+              strong Адрес
+          .footer__socials
+            a.footer__social(href='/' aria-label='ВКонтакте')
+              +icon('vk')
+            a.footer__social(href='/' aria-label='Telegram')
+              +icon('tg')
+      nav.footer__nav(aria-label='Навигация в подвале')
+        ul
+          li: a(href='/') Страница
+          li: a(href='/') Страница
+          li: a(href='/') Страница
+          li: a(href='/') Страница
+          li: a(href='/') Страница
+    .footer__bottom
+      strong НАЗВАНИЕ 2026
+      a(href='./policy.html') Политика обработки персональных данных
+      a(href='/') Соглашение политики конфиденциальности
+//- END footer

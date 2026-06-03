@@ -1,8 +1,22 @@
 @use 'helpers/variables' as *;
+@use 'helpers/mixins' as *;
 
 body {
   font-size: 16px;
   font-family: $font-main;
+
+  line-height: normal;
+  box-sizing: border-box;
+
+  a {
+      text-decoration: none;
+  }
+
+  img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+  }
 }
 
 .icon {
@@ -22,36 +36,104 @@ h6 {
   font-family: $font-heading;
 }
 
-.example-demo {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #fafafa;
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  width: 100%;
 }
 
-.example-demo__btn {
-  font: inherit;
-  cursor: pointer;
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #cbd5e1;
-  background: #fff;
-}
-
-.example-demo__btn:hover {
-  border-color: #94a3b8;
-}
-
-.example-demo__panel {
-  margin: 0.75rem 0 0;
-}
-
-.demo-section {
-  margin-top: 2rem;
-
-  h2 {
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
+.section {
+  @include r($desktop) {
+      padding-left: 15px;
+      padding-right: 15px;
   }
+
+  &--filled {
+      background: var(--secondary);
+      border-radius: 30px;
+
+      @include rmin($desktop) {
+          border-radius: 50px;
+      }
+  }
+
+  &--padd {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      @include rmin($desktop) {
+          padding-top: 100px;
+          padding-bottom: 100px;
+      }
+  }
+
+  &--padd-t {
+      padding-top: 50px;
+      padding-bottom: 0;
+
+      @include rmin($desktop) {
+          padding-top: 100px;
+          padding-bottom: 0;
+      }
+  }
+
+  &--padd-b {
+      padding-top: 0;
+      padding-bottom: 50px;
+
+      @include rmin($desktop) {
+          padding-top: 0;
+          padding-bottom: 100px;
+      }
+  }
+}
+
+
+.section-head {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include rmin($desktop) {
+        margin-bottom: 50px;
+    }
+
+    .title {
+        max-width: 270px;
+        position: relative;
+        margin: 0 auto;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 105%;
+        text-align: center;
+        color: var(--primary);
+
+        @include rmin($desktop) {
+            max-width: 100%;
+            font-size: 60px;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        color: var(--primary);
+
+        @include rmin($desktop) {
+            margin-top: 20px;
+            font-size: 26px;
+        }
+    }
+
+    &--white {
+        .title,
+        .section-head__subtitle {
+            color: var(--white);
+        }
+    }
+}
+
+main {
+    padding-top: 100px;
 }

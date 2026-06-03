@@ -8,6 +8,10 @@ html(lang="ru")
     .out(class=outClass)
       block header
         include ../partials/_header
-      block content
+      main.main-content
+        block content
+      block footer
+        include ../partials/_footer
+    +cookies()
     block scripts
       script(type="module" src="/js/app.js")

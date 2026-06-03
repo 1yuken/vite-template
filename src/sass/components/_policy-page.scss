@@ -1,0 +1,48 @@
+@use 'helpers' as *;
+
+.policy-page {
+    &__wrap {
+        width: 100%;
+    }
+
+    &__btn-back {
+        width: fit-content;
+        margin-bottom: 30px;
+
+        @include rmin($desktop) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 900px;
+
+        h2 {
+            margin: 0;
+            font-family: $font-heading;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 1.1;
+            color: var(--primary);
+
+            @include rmin($desktop) {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--black);
+
+            @include rmin($desktop) {
+                font-size: 18px;
+            }
+        }
+    }
+}

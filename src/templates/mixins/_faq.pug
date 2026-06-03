@@ -1,0 +1,40 @@
+mixin faq()
+  section#faq-section.faq.section.section--padd
+    .container
+      +sectionHead('Часто задаваемые вопросы', 'Ответы на основные вопросы о формате')
+      .faq__list
+        .faq__item.is-open
+          button.faq__question(type='button' aria-expanded='true')
+            span Вопрос?
+            span.faq__icon(aria-hidden='true')
+              +icon('plus')
+          .faq__answer
+            p Ответ на вопрос.
+        .faq__item
+          button.faq__question(type='button' aria-expanded='false')
+            span Вопрос?
+            span.faq__icon(aria-hidden='true')
+              +icon('plus')
+          .faq__answer
+            p Ответ на вопрос.
+        .faq__item
+          button.faq__question(type='button' aria-expanded='false')
+            span Вопрос?
+            span.faq__icon(aria-hidden='true')
+              +icon('plus')
+          .faq__answer
+            p Ответ на вопрос.
+        .faq__item
+          button.faq__question(type='button' aria-expanded='false')
+            span Вопрос?
+            span.faq__icon(aria-hidden='true')
+              +icon('plus')
+          .faq__answer
+            p Ответ на вопрос.
+        .faq__item
+          button.faq__question(type='button' aria-expanded='false')
+            span Вопрос?
+            span.faq__icon(aria-hidden='true')
+              +icon('plus')
+          .faq__answer
+            p Ответ на вопрос.

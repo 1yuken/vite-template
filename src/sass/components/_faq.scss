@@ -1,0 +1,124 @@
+@use 'helpers' as *;
+
+.faq {
+    .title {
+        max-width: 365px;
+
+        @include rmin($desktop) {
+            max-width: 100%;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include rmin($desktop) {
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        border-radius: 20px;
+        background: var(--primary-light);
+        transition: background-color 0.2s ease;
+
+        &.is-open {
+            .faq__icon {
+                background: var(--primary);
+
+                svg {
+                    fill: var(--white);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        @include rmin($desktop) {
+            border-radius: 50px;
+        }
+    }
+
+    &__question {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        padding: 10px 10px 12px 20px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: left;
+
+        span {
+            padding: 12px 0;
+            font-family: $font-heading;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 100%;
+            color: var(--black)
+        }
+
+        @include rmin($desktop) {
+            padding: 20px 20px 20px 40px;
+
+            span {
+                font-size: 23px;
+            }
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            fill: var(--primary);
+            width: 25px;
+            height: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        @include rmin($desktop) {
+            width: 60px;
+            height: 60px;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+
+        p {
+            max-width: 300px;
+            margin: 0;
+            padding: 0 20px 20px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 120%;
+            color: var(--black);
+        }
+
+        @include rmin($desktop) {
+            p {
+                max-width: 750px;
+                padding: 0 30px 30px 40px;
+                font-size: 20px;
+            }
+        }
+    }
+}

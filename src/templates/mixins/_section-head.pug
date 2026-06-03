@@ -1,0 +1,5 @@
+mixin sectionHead(title, subtitle = "", titleMods = "", subtitleMods = "", headMods = "")
+  .section-head(class=headMods)
+    h2(class=`title ${titleMods}`)= title
+    if subtitle
+      p(class=`section-head__subtitle ${subtitleMods}`)= subtitle

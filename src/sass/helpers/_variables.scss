@@ -1,2 +1,27 @@
+// breakpoints
+$phone-s: 365;
+$phone-m: 413;
+$phone: 575;
+$tablet: 767;
+$desktop: 1024;
+$desktop-s: 1270;
+
 $font-main: 'Manrope', sans-serif;
 $font-heading: 'DaysOne', sans-serif;
+
+$max-width: 1200px;
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+
+    --primary: #FF4194;
+    --primary-light: #FFE3EF;
+    --primary-500: #bb185f;
+
+    --secondary: #8E7CFF;
+    --secondary-light: #c9c2ff;
+
+    --gray-400: rgba(255, 255, 255, 0.35);
+    --gray-700: #4a4a4a;
+}

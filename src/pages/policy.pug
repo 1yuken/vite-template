@@ -1,0 +1,17 @@
+extends ../templates/layouts/_layout
+
+block vars
+  - var title = 'Политика обработки персональных данных'
+  - var bodyClass = 'no-hero policy-page'
+
+block content
+  .section.section--padd
+    .policy-page__wrap
+      .container
+        a.btn.btn--primary.policy-page__btn-back(href='./main.html')
+          +icon('arrow-left-2')
+          | На главную
+        .policy-page__content
+          h2 Согласие на обработку персональных данных
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Et incidunt cum, reiciendis quae ut natus facilis nulla perferendis iusto vel itaque quisquam adipisci eligendi odit non quibusdam dolorem maxime. Cumque minima sunt, natus illo deleniti corporis ea soluta quibusdam tenetur excepturi quod quia quos voluptatibus modi, accusantium aliquam rem ad!
